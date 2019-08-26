@@ -18,5 +18,11 @@ def index(request):
         'count': PageView.objects.count()
     })
 
+def delete(request):
+
+    PageView.objects.all().delete()
+
+    return HttpResponse("Deletion successful!")
+
 def health(request):
     return HttpResponse(PageView.objects.count())
